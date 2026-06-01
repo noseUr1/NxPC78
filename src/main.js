@@ -1,5 +1,20 @@
 $(function()
 {
+    $('#firstView video:visible').each(function()
+    {
+        this.muted = true;
+        this.play();
+    });
+
+    $(document).one('touchstart', function()
+    {
+        $('#firstView video:visible').each(function()
+        {
+            this.muted = true;
+            this.play();
+        });
+    });
+
     $('lottie-player').on('complete', function() {
         $('.innerarea').removeClass('d-none');
         $(window).trigger('scroll');
@@ -46,6 +61,12 @@ $(function()
                 }
             }
 
+        });
+
+        $('#firstView video:visible').each(function()
+        {
+            this.muted = true;
+            this.play();
         });
 
     });
