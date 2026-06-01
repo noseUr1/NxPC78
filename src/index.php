@@ -31,8 +31,8 @@
 					<video src="./assets/videos/purple_sp.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" class="sp_only" poster="./assets/images/purple_firstframe.png"></video>
 				</div>
 				<div class="video next">
-					<video src="./assets/videos/green_pc.mp4" autoplay muted loop playsinline webkit-playsinline preload="none" class="pc_only"></video>
-					<video src="./assets/videos/green_sp.mp4" autoplay muted loop playsinline webkit-playsinline preload="none" class="sp_only" poster="./assets/images/green_firstframe.png"></video>
+					<video src="./assets/videos/green_pc.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" class="pc_only"></video>
+					<video src="./assets/videos/green_sp.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" class="sp_only" poster="./assets/images/green_firstframe.png"></video>
 				</div>
 			</div>
 			<div class="logoarea">
