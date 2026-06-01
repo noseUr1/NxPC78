@@ -2,19 +2,27 @@ $(function()
 {
     $('lottie-player').on('complete', function() {
         $('.innerarea').removeClass('d-none');
+        $(window).trigger('scroll');
     });
 
     $(window).on('scroll', function()
     {
-        var offset = $('#main .innerarea').offset().top;
-        var scrollPos = $(window).scrollTop();
+        var innerarea = $('#main .innerarea')[0];
+        var top = 0;
+        var bottom = 0;
         var wh = $(window).height();
+
+        if (innerarea && !$('.innerarea').hasClass('d-none')) {
+            var rect = innerarea.getBoundingClientRect();
+            top = rect.top;
+            bottom = rect.bottom;
+        }
 
         $('.video').each(function()
         {
             var $this = $(this);
 
-            if(scrollPos > offset - wh - 100){
+            if(innerarea && !$('.innerarea').hasClass('d-none') && bottom > 0 && top < wh){
 
                 if ($this.hasClass('prev')) {
                     $this.removeClass('fadeIn');
