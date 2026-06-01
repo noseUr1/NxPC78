@@ -1,50 +1,18 @@
 $(function()
 {
-    $('#firstView .video').each(function()
+    $('#firstView video:visible').each(function()
     {
-        var $layer = $(this);
-        var isActive = false;
-
-        if ($layer.hasClass('prev') && !$layer.hasClass('fadeOut')) {
-            isActive = true;
-        }
-        if ($layer.hasClass('next') && $layer.hasClass('fadeIn')) {
-            isActive = true;
-        }
-
-        $layer.find('video:visible').each(function()
-        {
-            this.muted = true;
-
-            if (isActive) {
-                if (this.preload === 'none') {
-                    this.preload = 'auto';
-                    this.load();
-                }
-                this.play();
-            }
-            else {
-                this.pause();
-            }
-        });
+        this.muted = true;
+        this.play();
     });
 
-    $('#firstView video').on('canplay', function()
+    $(document).one('touchstart', function()
     {
-        var $layer = $(this).closest('.video');
-        var isActive = false;
-
-        if ($layer.hasClass('prev') && !$layer.hasClass('fadeOut')) {
-            isActive = true;
-        }
-        if ($layer.hasClass('next') && $layer.hasClass('fadeIn')) {
-            isActive = true;
-        }
-
-        if (isActive) {
+        $('#firstView video:visible').each(function()
+        {
             this.muted = true;
             this.play();
-        }
+        });
     });
 
     $('lottie-player').on('complete', function() {
@@ -95,33 +63,10 @@ $(function()
 
         });
 
-        $('#firstView .video').each(function()
+        $('#firstView video:visible').each(function()
         {
-            var $layer = $(this);
-            var isActive = false;
-
-            if ($layer.hasClass('prev') && !$layer.hasClass('fadeOut')) {
-                isActive = true;
-            }
-            if ($layer.hasClass('next') && $layer.hasClass('fadeIn')) {
-                isActive = true;
-            }
-
-            $layer.find('video:visible').each(function()
-            {
-                this.muted = true;
-
-                if (isActive) {
-                    if (this.preload === 'none') {
-                        this.preload = 'auto';
-                        this.load();
-                    }
-                    this.play();
-                }
-                else {
-                    this.pause();
-                }
-            });
+            this.muted = true;
+            this.play();
         });
 
     });
