@@ -28,7 +28,7 @@
 			<div class="video_bg">
 				<div class="video prev">
 					<video src="./assets/videos/purple_pc.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" class="pc_only"></video>
-					<video src="./assets/videos/purple_sp.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" class="sp_only" poster="./assets/images/purple_firstframe.png"></video>
+					<video src="./assets/videos/purple_sp_1.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" class="sp_only" poster="./assets/images/purple_firstframe.png"></video>
 				</div>
 				<div class="video next">
 					<video src="./assets/videos/green_pc.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" class="pc_only"></video>
