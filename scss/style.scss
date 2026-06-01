@@ -1,0 +1,440 @@
+@function vw($px, $baseWidth)
+{
+	@return calc($px / $baseWidth) * 100vw;
+}
+
+.row
+{
+	margin: 0;
+}
+
+.col-md-6
+{
+	padding-left  : 0 !important;
+	padding-right : 0 !important;
+}
+
+.fs_24
+{
+	font-size : 1.5rem;
+	@media screen and (max-width: 767px) {
+		font-size : 1.5rem;
+	}
+}
+
+.fs_20
+{
+	font-size : 1.25rem !important;
+
+	@media screen and (max-width: 767px) {
+		font-size : 1.25rem;
+	}
+}
+
+.fs_16
+{
+	font-size : 1.0rem;
+
+	@media screen and (max-width: 767px) {
+		font-size : 1.0rem;
+	}
+}
+
+
+html, body
+{
+	margin           : 0;
+	padding          : 0;
+	border           : 0px;
+	height           : 100%;
+	color            : #FFF;
+	background-color : #0A0A0A;
+	font-size        : 16px;
+}
+
+body
+{
+	margin      : 0;
+	padding     : 0;
+	display     : inline;
+	max-width   : 1920px;
+	line-height : 100%;
+	color       : rgb(255, 255, 255);
+	font-family :'Noto Sans', sans-serif;
+	font-weight : 400;
+	line-height : 1.2;
+
+	@media screen and (max-width: 767px) {
+		font-size : 16px;
+		line-height : 1.5;
+	}
+}
+
+.container-fluid
+{
+	background-color : #0A0A0A;
+}
+
+.text
+{
+	@extend .fs_16;
+	margin-top: 5px;
+}
+
+.innerarea
+{
+	width : vw(1680, 1920);
+	max-width: 1680px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: vw(100, 1920);
+	background-color : #0000FF;
+
+	@media screen and (max-width: 767px) {
+		width: vw(360, 390);
+		max-width: 360px;
+		padding: vw(48, 390) vw(24, 390);
+	}
+}
+
+.heading
+{
+	@extend .fs_24;
+	font-family : redaction-50, sans-serif;
+	font-weight : 700;
+	font-style  : normal;
+	margin-bottom: 20px;
+}
+
+.title
+{
+	@extend .fs_20;
+	font-family: "redaction-50", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	margin-bottom: 10px;
+}
+
+.pc_only
+{
+	display: block;
+	@media screen and (max-width: 767px) {
+		display: none;
+	}
+}
+.sp_only
+{
+	display: none;
+	@media screen and (max-width: 767px) {
+		display: block;
+	}
+}
+
+a
+{
+	color           : #000;
+	text-decoration : none;
+
+	&:hover
+	{
+		color : #000;
+		text-decoration : none;
+	}
+}
+
+.autolink
+{
+	a
+	{
+		text-decoration : underline !important;
+		word-break      : break-all;
+
+		&:hover
+		{
+			text-decoration : none !important;
+		}
+	}
+}
+
+.container-fluid
+{
+	padding-right : 0px;
+	padding-left  : 0px;
+}
+
+select
+{
+	border       : 2px solid #000 !important;
+	margin-right : 10px;
+}
+
+.selectarea
+{
+	display      : flex;
+	align-items  : center;
+	margin-right : 10px;
+}
+
+.selectarea
+{
+	p
+	{
+		display      : flex;
+		align-items  : center;
+
+		span
+		{
+			margin-right : 10px;
+
+			input
+			{
+				padding-right : 0;
+			}
+		}
+
+	}
+}
+
+
+.youtube
+{
+    position    : relative;
+    width       : 100%;
+    padding-top : 56.25%;
+
+	iframe
+	{
+		position : absolute;
+		top      : 0;
+		right    : 0;
+		width    : 100% !important;
+		height   : 100% !important;	
+	}
+}
+
+.video_bg
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	pointer-events: none;
+}
+
+.prev{
+	opacity: 1;
+
+	&.fadeOut{
+		transition: opacity 0.75s;
+		opacity: 0;
+	}
+	&.fadeIn{
+		transition: opacity 0.75s;
+		opacity: 1;
+	}
+}
+
+
+.next{
+	opacity: 0;
+	&.fadeIn{
+		transition: opacity 0.75s;
+		opacity: 1;
+	}
+	&.fadeOut{
+		transition: opacity 0.75s;
+		opacity: 0;
+	}
+}
+
+#firstView
+{
+	.logoarea
+	{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: -1;
+		.logo
+		{
+			width: vw(1680, 1920) !important;
+			height: auto !important;
+			max-width: 1680px !important;
+			@media screen and (max-width: 767px) {
+				width: vw(360, 390) !important;
+				max-width: 360px !important;
+			}
+		}
+	}
+}
+
+
+
+video
+{
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	// @media screen and (max-width: 767px) {
+	// 	width: auto;
+	// 	height: 100%;
+	// 	object-fit: cover;
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// }
+}
+
+#main
+{
+	.innerarea
+	{
+		margin-top: vw(1154, 1920);
+		@media screen and (max-width: 767px) {
+			margin-top: vw(1300, 390);
+		}
+	}
+
+	.infoarea
+	{
+		margin-bottom: 100px;
+		@media screen and (max-width: 767px) {
+			margin-bottom: 200px;
+		}
+
+		.contents
+		{
+			margin-top: 20px;
+			margin-bottom: 20px;
+
+			.text
+			{
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	.performersarea
+	{
+		margin-bottom: 200px;
+
+		.heading
+		{
+			margin-bottom: 30px;
+		}
+		.performers
+		{
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			row-gap: 90px;
+			column-gap: 150px;
+			@media screen and (max-width: 767px) {
+				grid-template-columns: repeat(1, 1fr);
+				row-gap: 90px;
+				column-gap: 90px;
+			}
+
+			.content
+			{
+				width: vw(650, 1920);
+				@media screen and (max-width: 767px) {
+					width: 100%;
+				}
+
+				.imagearea
+				{
+					width: 100%;
+					height: vw(270, 1920);
+					padding: 0 vw(120, 1920);
+					text-align: center;
+					justify-content: space-between;
+
+					@media screen and (max-width: 767px) {
+						padding: 0;
+						height: vw(190, 390);
+					}
+					&.onePieceImage
+					{
+						img
+						{
+							width: vw(270, 1920);
+							height: auto;
+							@media screen and (max-width: 767px) {
+								width: vw(190, 390);
+							}
+						}
+					}
+					&.twoPieceImage
+					{
+						display: flex;
+						justify-content: space-between;
+
+						img
+						{
+							width: vw(202, 1920);
+							height: auto;
+							@media screen and (max-width: 767px) {
+								width: vw(154, 390);
+							}
+						}
+						.image1
+						{
+							align-self: flex-start;
+						}
+
+						.image2
+						{
+							align-self: flex-end;
+						}
+					}
+					&.threePieceImage
+					{
+						display: flex;
+						justify-content: space-between;
+
+						img
+						{
+							width: vw(135, 1920);
+							height: auto;
+							@media screen and (max-width: 767px) {
+								width: vw(102, 390);
+							}
+						}
+						.image1
+						{
+							align-self: flex-start;
+						}
+						.image2
+						{
+							align-self: center;
+						}
+						.image3
+						{
+							align-self: flex-end;
+						}
+					}
+				}
+				.title
+				{
+					margin-top: 20px;
+					margin-bottom: 10px;
+				}
+
+			}
+		}
+	}
+	#footer
+	{
+		@extend .fs_20;
+		text-align: center;
+		@media screen and (max-width: 767px) {
+			font-size: 14px !important;
+		}
+	}
+}
