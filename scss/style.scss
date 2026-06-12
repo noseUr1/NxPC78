@@ -421,14 +421,13 @@ video
 	.youtubeIcon
 	{
 		position: fixed;
-		bottom: 25px;
+		bottom: 50px;
 		right: 25px;
-		height: vw(309, 1920);
+		height: vw(200, 1920);
 		width: auto;
 		z-index: 1000;
 		@media screen and (max-width: 767px) {
-			height: vw(154, 390);
-			right: 12.5px;
+			height: vw(100, 390);
 		}
 		img
 		{
