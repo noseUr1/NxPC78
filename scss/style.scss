@@ -636,8 +636,8 @@ video
 		{
 			display               : grid;
 			grid-template-columns : repeat(2, 1fr);
-			row-gap               : vw(90, 1920);
-			column-gap            : vw(150, 1920);
+			row-gap               : 4.6875%;
+			column-gap            : 7.8125%;
 
 			@media screen and (max-width: 767px) {
 				grid-template-columns : repeat(1, 1fr);
@@ -648,6 +648,7 @@ video
 			.content
 			{
 				width : vw(650, 1920);
+				max-width : 650px;
 
 				@media screen and (max-width: 767px) {
 					width : 100%;
@@ -657,6 +658,7 @@ video
 				{
 					width           : 100%;
 					height          : vw(270, 1920);
+					max-height      : 270px;
 
 					padding         : 0 vw(120, 1920);
 
@@ -667,6 +669,7 @@ video
 						padding : 0;
 
 						height   : vw(190, 390);
+						max-height : 190px;
 					}
 					
 					&.onePieceImage
@@ -674,10 +677,12 @@ video
 						img
 						{
 							width  : vw(270, 1920);
+							max-width : 270px;
 							height : auto;
 
 							@media screen and (max-width: 767px) {
 								width : vw(190, 390);
+								max-width : 190px;
 							}
 						}
 					}
@@ -690,10 +695,12 @@ video
 						img
 						{
 							width  : vw(202, 1920);
+							max-width : 202px;
 							height : auto;
 
 							@media screen and (max-width: 767px) {
 								width : vw(154, 390);
+								max-width : 154px;
 							}
 						}
 
@@ -715,10 +722,12 @@ video
 						img
 						{
 							width  : vw(135, 1920);
+							max-width : 135px;
 							height : auto;
 
 							@media screen and (max-width: 767px) {
 								width : vw(102, 390);
+								max-width : 102px;
 							}
 						}
 
@@ -753,9 +762,11 @@ video
 	{
 		@extend .fs_20;
 		text-align : center;
+		margin-bottom : 200px;
 
 		@media screen and (max-width: 767px) {
 			font-size : 14px !important;
+			margin-top : 100px;
 		}
 	}
 }
