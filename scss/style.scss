@@ -5,7 +5,7 @@
 
 .row
 {
-	margin: 0;
+	margin : 0;
 }
 
 .col-md-6
@@ -17,6 +17,7 @@
 .fs_24
 {
 	font-size : 1.5rem;
+
 	@media screen and (max-width: 767px) {
 		font-size : 1.5rem;
 	}
@@ -62,10 +63,10 @@ body
 	color       : rgb(255, 255, 255);
 	font-family :'Noto Sans', sans-serif;
 	font-weight : 400;
-	line-height : 1.2;
+	line-height : 1.5;
 
 	@media screen and (max-width: 767px) {
-		font-size : 16px;
+		font-size   : 16px;
 		line-height : 1.5;
 	}
 }
@@ -78,55 +79,61 @@ body
 .text
 {
 	@extend .fs_16;
-	margin-top: 5px;
+	margin-top : 5px;
 }
 
 .innerarea
 {
-	width : vw(1680, 1920);
-	max-width: 1680px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: vw(100, 1920);
+	width            : vw(1680, 1920);
+	max-width        : 1680px;
+
+	margin-left      : auto;
+	margin-right     : auto;
+
+	padding          : vw(100, 1920);
+
 	background-color : #0000FF;
 
 	@media screen and (max-width: 767px) {
-		width: vw(360, 390);
-		max-width: 360px;
-		padding: vw(48, 390) vw(24, 390);
+		width     : vw(360, 390);
+		max-width : 360px;
+
+		padding   : vw(48, 390) vw(24, 390);
 	}
 }
 
 .heading
 {
 	@extend .fs_24;
-	font-family : redaction-50, sans-serif;
-	font-weight : 700;
-	font-style  : normal;
-	margin-bottom: 20px;
+	font-family   : redaction-50, sans-serif;
+	font-weight   : 700;
+	font-style    : normal;
+	margin-bottom : 20px;
 }
 
 .title
 {
 	@extend .fs_20;
-	font-family: "redaction-50", sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	margin-bottom: 10px;
+	font-family   : "redaction-50", sans-serif;
+	font-weight   : 400;
+	font-style    : normal;
+	margin-bottom : 10px;
 }
 
 .pc_only
 {
-	display: block;
+	display : block;
+
 	@media screen and (max-width: 767px) {
-		display: none;
+		display : none;
 	}
 }
+
 .sp_only
 {
-	display: none;
+	display : none;
 	@media screen and (max-width: 767px) {
-		display: block;
+		display : block;
 	}
 }
 
@@ -137,7 +144,7 @@ a
 
 	&:hover
 	{
-		color : #000;
+		color           : #000;
 		text-decoration : none;
 	}
 }
@@ -225,29 +232,12 @@ select
 
 .prev{
 	opacity: 1;
-
-	&.fadeOut{
-		transition: opacity 0.75s;
-		opacity: 0;
-	}
-	&.fadeIn{
-		transition: opacity 0.75s;
-		opacity: 1;
-	}
 }
-
 
 .next{
 	opacity: 0;
-	&.fadeIn{
-		transition: opacity 0.75s;
-		opacity: 1;
-	}
-	&.fadeOut{
-		transition: opacity 0.75s;
-		opacity: 0;
-	}
 }
+
 
 #firstView
 {
@@ -258,20 +248,142 @@ select
 		left: 50%;
 		transform: translate(-50%, -50%);
 		z-index: -1;
+
 		.logo
 		{
+			opacity: 0;
 			width: vw(1680, 1920) !important;
 			height: auto !important;
 			max-width: 1680px !important;
+
 			@media screen and (max-width: 767px) {
-				width: vw(360, 390) !important;
-				max-width: 360px !important;
+				width: vw(85, 390) !important;
+				max-width: 85px !important;
+			}
+
+
+			&.fadeIn
+			{
+				opacity: 1;
 			}
 		}
 	}
+
+	.scrollarea
+	{
+		@extend .fs_24;
+		position: fixed;
+		bottom: vw(100, 1920);
+		left: 50%;
+		transform: translateX(-50%);
+		font-family: "redaction-50", sans-serif;
+		opacity: 0;
+		z-index: -1;
+		pointer-events: none;
+
+		@media screen and (max-width: 767px) {
+			bottom: vw(24, 390);
+			color: #0000FF;
+		}
+
+		&.scroll
+		{
+			width: 48px;
+			height: 120px;
+
+			@media screen and (max-width: 767px) {
+				height: 100px;
+			}
+		}
+	}
+
+	.scroll_down{
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 48px;
+		height: 85px;
+		animation: arrowmove 1s ease-in-out infinite;
+	  }
+	  
+	  .scroll_down a{
+		position: absolute;
+		left: -24px;
+		bottom: 17px;
+		color: #FFF;
+		font-size: 14px;
+		font-family: 'redaction-50', sans-serif;
+		letter-spacing: .2em;
+		writing-mode: vertical-rl;
+		text-decoration: none;
+		text-transform: uppercase;
+		@media screen and (max-width: 767px) {
+			color: #0000FF;
+		}
+	  }
+	  
+	  .scroll_down:before {
+		  content: "";
+		  position: absolute;
+		  bottom: 5px;
+		  right: -6px;
+		  width: 2px;
+		  height: 20px;
+		  background: #FFF;
+		  transform: skewX(-31deg);
+		  @media screen and (max-width: 767px) {
+			background: #0000FF;
+		  }
+	  }
+	  
+	  .scroll_down:after{
+		content:"";
+		position: absolute;
+		bottom: 5px;
+		right: 0;
+		width: 2px;
+		height: 85px;
+		background:#FFF;
+		@media screen and (max-width: 767px) {
+			background: #0000FF;
+		}
+	  }
+	  
+	  @keyframes arrowmove{
+		 0%{ transform: translateX(-50%) translateY(0); }
+		 50%{ transform: translateX(-50%) translateY(12px); }
+		 100%{ transform: translateX(-50%) translateY(0); }
+	  }
+
 }
 
+@keyframes blinking
+{
+	0%
+	{
+		opacity: 0;
+	}
+	100%
+	{
+		opacity: 1;
+	}
+}
 
+.blink
+{
+	animation: blinking 0.75s ease-in-out infinite alternate;
+}
+
+.fadeOut{
+	transition: opacity 0.75s;
+	opacity: 0 !important;
+}
+
+.fadeIn{
+	transition: opacity 0.75s;
+	opacity: 1 !important;
+}
 
 video
 {
@@ -279,17 +391,22 @@ video
 	height: auto;
 	object-fit: cover;
 	position: absolute;
-	top: 0;
-	left: 0;
-	// @media screen and (max-width: 767px) {
-	// 	width: auto;
-	// 	height: 100%;
-	// 	object-fit: cover;
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// }
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	@media screen and (max-width: 767px) {
+		width: auto;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
+
+
+
 
 #main
 {
@@ -300,6 +417,121 @@ video
 			margin-top: vw(1300, 390);
 		}
 	}
+
+	.youtubeIcon
+	{
+		position: fixed;
+		bottom: 25px;
+		right: 25px;
+		height: vw(309, 1920);
+		width: auto;
+		z-index: 1000;
+		@media screen and (max-width: 767px) {
+			height: vw(154, 390);
+			right: 12.5px;
+		}
+		img
+		{
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+
+	.datearea
+	{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: vw(40, 1920);
+		z-index: 0;
+		background-color: #0000FF;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+
+		@media screen and (max-width: 767px) {
+			height: vw(32, 390);
+		}
+
+		@keyframes infinity-scroll-left {
+			from {
+			  transform: translateX(0);
+			}
+			to {
+				transform: translateX(-100%);
+			}
+		}
+
+		.scroll-infinity
+		{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			overflow: hidden;
+		}
+
+		.scroll-infinity__wrap
+		{
+			display: flex;
+			overflow: hidden;
+		}
+
+		.scroll-infinity__list
+		{
+			display: flex;
+			align-items: center;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.scroll-infinity__list--left
+		{
+			animation: infinity-scroll-left 80s infinite linear 0.5s both;
+
+			@media screen and (max-width: 767px) {
+				animation-duration: 50s;
+			}
+		}
+
+		.scroll-infinity__item
+		{
+			width: calc(100vw / 10);
+
+			@media screen and (max-width: 767px) {
+				width: calc(100vw / 10);
+			}
+		}
+
+		.scroll-infinity__item>img
+		{
+			width: 100%;
+		}
+
+		.scroll-infinity__item--text
+		{
+			display: flex;
+			align-items: center;
+			flex-shrink: 0;
+			font-size: vw(16, 1920);
+			font-family: "redaction-50", sans-serif;
+			width: calc(vw(1920, 1920) / 5);
+			height: 100%;
+			color: #FFF;
+			white-space: nowrap;
+			transform: skewX(-12deg);
+
+			@media screen and (max-width: 767px) {
+				font-size: vw(16, 390);
+				width: calc(vw(390, 390) / 1);
+				transform: skewX(-12deg);
+			}
+		}
+	}
+	
 
 	.infoarea
 	{
@@ -320,6 +552,20 @@ video
 		}
 	}
 
+	.timetablearea
+	{
+		img
+		{
+			width: 100%;
+			height: auto;
+		}
+
+		margin-bottom: 100px;
+		@media screen and (max-width: 767px) {
+			margin-bottom: 200px;
+		}
+	}
+
 	.performersarea
 	{
 		margin-bottom: 200px;
@@ -328,16 +574,17 @@ video
 		{
 			margin-bottom: 30px;
 		}
+
 		.performers
 		{
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			row-gap: 90px;
-			column-gap: 150px;
+			row-gap: vw(90, 1920);
+			column-gap: vw(150, 1920);
 			@media screen and (max-width: 767px) {
 				grid-template-columns: repeat(1, 1fr);
-				row-gap: 90px;
-				column-gap: 90px;
+				row-gap: vw(90, 390);
+				column-gap: vw(90, 390);
 			}
 
 			.content
@@ -424,7 +671,10 @@ video
 				{
 					margin-top: 20px;
 					margin-bottom: 10px;
+					font-family: "noto-sans", sans-serif;
 				}
+
+
 
 			}
 		}

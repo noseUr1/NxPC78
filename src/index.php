@@ -18,25 +18,64 @@
 </head>
 
 <body>
-	<div id="header">
-
-	</div>
-
-	<div></div>
     <div id="main">
+		<?php
+		date_default_timezone_set('Asia/Tokyo');
+		$now = time();
+		$displayStart = strtotime('2026-06-11 18:00:00');
+		$displayEnd = strtotime('2026-06-19 21:00:00');
+		$isPlay = ($now >= $displayStart && $now <= $displayEnd);
+		?>
+		<?php if ($isPlay) : ?>
+			<div class="youtubeIcon">
+				<img src="./assets/images/youtube_logo.png">
+			</div>
+		<?php endif; ?>
+
+		<div class="datearea">
+			<div class="scroll-infinity">
+				<div class="scroll-infinity__wrap">
+					<ul class="scroll-infinity__list scroll-infinity__list--left">
+						<li class="scroll-infinity__item--text">2026.6.19(Fri)_18:00-21:00_IAMAS GALLERY 1</li>
+						<li class="scroll-infinity__item--text">2026.6.19(Fri)_18:00-21:00_IAMAS GALLERY 1</li>
+						<li class="scroll-infinity__item--text">2026.6.19(Fri)_18:00-21:00_IAMAS GALLERY 1</li>
+						<li class="scroll-infinity__item--text">2026.6.19(Fri)_18:00-21:00_IAMAS GALLERY 1</li>
+						<li class="scroll-infinity__item--text">2026.6.19(Fri)_18:00-21:00_IAMAS GALLERY 1</li>
+					</ul>
+					<ul class="scroll-infinity__list scroll-infinity__list--left">
+						<li class="scroll-infinity__item--text">2026.6.19(Fri)_18:00-21:00_IAMAS GALLERY 1</li>
+						<li class="scroll-infinity__item--text">2026.6.19(Fri)_18:00-21:00_IAMAS GALLERY 1</li>
+						<li class="scroll-infinity__item--text">2026.6.19(Fri)_18:00-21:00_IAMAS GALLERY 1</li>
+						<li class="scroll-infinity__item--text">2026.6.19(Fri)_18:00-21:00_IAMAS GALLERY 1</li>
+						<li class="scroll-infinity__item--text">2026.6.19(Fri)_18:00-21:00_IAMAS GALLERY 1</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<div id="firstView">
 			<div class="video_bg">
 				<div class="video prev">
-					<video src="./assets/videos/purple_pc.mp4" autoplay muted loop playsinline class="pc_only"></video>
-					<video src="./assets/videos/purple_sp.mp4" autoplay muted loop playsinline class="sp_only"></video>
+					<video src="./assets/videos/green_pc.mp4" autoplay muted loop playsinline class="pc_only"></video>
 				</div>
 				<div class="video next">
-					<video src="./assets/videos/green_pc.mp4" autoplay muted loop playsinline class="pc_only"></video>
-					<video src="./assets/videos/green_sp.mp4" autoplay muted loop playsinline class="sp_only"></video>
+					<video src="./assets/videos/purple_pc.mp4" autoplay muted loop playsinline class="pc_only"></video>
+				</div>
+				<div class="video prev">
+					<video src="./assets/videos/movie_sp.mp4" autoplay muted loop playsinline class="sp_only"></video>
 				</div>
 			</div>
 			<div class="logoarea">
-				<lottie-player src="./assets/logo_anim.lottie.json" autoplay class="logo"></lottie-player>
+				<lottie-player src="./assets/logo_anim.lottie.json" autoplay class="logo pc_only"></lottie-player>
+				<lottie-player src="./assets/logo_sp.lottie.json" autoplay class="logo sp_only"></lottie-player>
+			</div>
+
+			<div class="scrollarea ready">
+					<span class="blink">Loading...</span>
+				</div>
+				<div class="scrollarea scroll">
+					<div class="scroll_down" id="type03">
+						<a href="#">Scroll</a>
+					</div>
 			</div>
 		</div>
 
@@ -56,10 +95,10 @@
 						Venue
 					</div>
 					<div class="text pc_only">
-						{ IAMAS GALLERY 1_岐阜県大垣市加賀野4丁目1-7 ソフトピアジャパン センタービル3階}
+						{ IAMAS GALLERY 1_岐阜県大垣市加賀野4丁目1-7 ソフトピアジャパン センタービル3階 }
 					</div>
 					<div class="text sp_only">
-						{ IAMAS GALLERY 1<br>岐阜県大垣市加賀野4丁目1-7<br>ソフトピアジャパン センタービル3階}
+						{ IAMAS GALLERY 1<br>岐阜県大垣市加賀野4丁目1-7<br>ソフトピアジャパン センタービル3階 }
 					</div>
 				</div>
 				<div class="contents">
@@ -68,12 +107,19 @@
 					</div>
 					<div class="text mb-0">
 					クラブやライブにおけるアーティストと観客の相互作用を追求するNxPC.Lab。 メディアテクノロジーを駆使して、音楽体験を拡張し、観客を巻き込む場の臨場感を創り出す。現代のメディア体験において必要とされる対話性、参加性をデバイス、インタフェース、ネットワークといったメディアテクノロジーを駆使することで、音楽体験を拡張し、音楽空間におけるコミュニケーションを次のステージへ導くための研究開発、イベントを実施している。
-					</div>
-					<div class="text">
-					実験の場としてのイベントNxPC.Liveを中心に、レクチャーやワークショップ、ネットラジオなどの活動を行っている。
+					<br>実験の場としてのイベントNxPC.Liveを中心に、レクチャーやワークショップ、ネットラジオなどの活動を行っている。
 					</div>
 				</div>
 			</div>	
+
+			<div class="timetablearea">
+				<div class="heading">
+					time table
+				</div>
+				<div class="contents">
+					<img src="./assets/images/timetable.png">
+				</div>
+			</div>
 
 			<div class="performersarea">
 				<div class="heading">
