@@ -1,37 +1,8 @@
 $(function()
 {
-    // $('lottie-player').on('ready', function()
-    // {
-    //     var player = this;
-    //     var $player = $(player);
-
-    //     $player.addClass('is-visible');
-
-    //     var started = false;
-
-    //     function startLogoAnim()
-    //     {
-    //         if (started) {
-    //             return;
-    //         }
-    //         started = true;
-    //         player.play();
-    //     }
-
-    //     $player.one('transitionend webkitTransitionEnd', function(e)
-    //     {
-    //         if (e.originalEvent.propertyName !== 'opacity') {
-    //             return;
-    //         }
-    //         startLogoAnim();
-    //     });
-
-    //     setTimeout(startLogoAnim, 700);
-    // });
-
     $('lottie-player').on('ready', function() {
         $(this).addClass('fadeIn');
-        $('.scrollarea.ready').addClass('fadeIn');
+        $('.ready').addClass('fadeIn');
     });
 
     $('lottie-player').on('complete', function() {

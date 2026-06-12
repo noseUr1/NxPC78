@@ -132,6 +132,7 @@ body
 .sp_only
 {
 	display : none;
+
 	@media screen and (max-width: 767px) {
 		display : block;
 	}
@@ -221,32 +222,36 @@ select
 
 .video_bg
 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	pointer-events: none;
-	overflow: hidden;
+	position       : fixed;
+	top            : 0;
+	left           : 0;
+
+	width          : 100%;
+	height         : 100%;
+
+	z-index        : -1;
+	pointer-events : none;
+	overflow       : hidden;
 }
 
 .video
 {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+	position : absolute;
+	top      : 0;
+	left     : 0;
+
+	width    : 100%;
+	height   : 100%;
+
+	overflow : hidden;
 }
 
 .prev{
-	opacity: 1;
+	opacity : 1;
 }
 
 .next{
-	opacity: 0;
+	opacity : 0;
 }
 
 
@@ -254,119 +259,146 @@ select
 {
 	.logoarea
 	{
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: -1;
+		position  : fixed;
+		top       : 50%;
+		left      : 50%;
+
+		transform : translate(-50%, -50%);
+		z-index   : -1;
 
 		.logo
 		{
-			opacity: 0;
-			width: vw(1680, 1920) !important;
-			height: auto !important;
-			max-width: 1680px !important;
+			opacity : 0;
+
+			width     : vw(1680, 1920) !important;
+			height    : auto !important;
+			max-width : 1680px !important;
 
 			@media screen and (max-width: 767px) {
-				width: vw(85, 390) !important;
-				max-width: 85px !important;
+				width     : vw(85, 390) !important;
+				max-width : 85px !important;
 			}
-
 
 			&.fadeIn
 			{
-				opacity: 1;
+				opacity : 1;
 			}
 		}
 	}
 
 	.scrollarea
 	{
-		@extend .fs_24;
-		position: fixed;
-		bottom: vw(100, 1920);
-		left: 50%;
-		transform: translateX(-50%);
-		font-family: "redaction-50", sans-serif;
-		opacity: 0;
-		z-index: -1;
-		pointer-events: none;
+		font-family    : "redaction-50", sans-serif;
+		font-size      : 24px;
+		opacity        : 0;
+		z-index        : -1;
+
+		position       : fixed;
+		bottom         : vw(100, 1920);
+		left           : 50%;
+		transform      : translateX(-50%);
+
+		pointer-events : none;
 
 		@media screen and (max-width: 767px) {
-			bottom: vw(24, 390);
-			color: #0000FF;
+			font-size : 16px;
+			color     : #0000FF;
+
+			bottom    : vw(16, 390);
 		}
 
 		&.scroll
 		{
-			width: 48px;
-			height: 120px;
+			width  : 48px;
+			height : 120px;
 
 			@media screen and (max-width: 767px) {
-				height: 100px;
+				width  : 32px;
+				height : 10px;
 			}
 		}
 	}
 
-	.scroll_down{
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 48px;
-		height: 85px;
-		animation: arrowmove 1s ease-in-out infinite;
-	  }
-	  
-	  .scroll_down a{
-		position: absolute;
-		left: -24px;
-		bottom: 17px;
-		color: #FFF;
-		font-size: 14px;
-		font-family: 'redaction-50', sans-serif;
-		letter-spacing: .2em;
-		writing-mode: vertical-rl;
-		text-decoration: none;
-		text-transform: uppercase;
-		@media screen and (max-width: 767px) {
-			color: #0000FF;
-		}
-	  }
-	  
-	  .scroll_down:before {
-		  content: "";
-		  position: absolute;
-		  bottom: 5px;
-		  right: -6px;
-		  width: 2px;
-		  height: 20px;
-		  background: #FFF;
-		  transform: skewX(-31deg);
-		  @media screen and (max-width: 767px) {
-			background: #0000FF;
-		  }
-	  }
-	  
-	  .scroll_down:after{
-		content:"";
-		position: absolute;
-		bottom: 5px;
-		right: 0;
-		width: 2px;
-		height: 85px;
-		background:#FFF;
-		@media screen and (max-width: 767px) {
-			background: #0000FF;
-		}
-	  }
-	  
-	  @keyframes arrowmove{
-		 0%{ transform: translateX(-50%) translateY(0); }
-		 50%{ transform: translateX(-50%) translateY(12px); }
-		 100%{ transform: translateX(-50%) translateY(0); }
-	  }
+	.scroll_down
+	{
+		position  : absolute;
+		bottom    : 0;
+		left      : 50%;
 
+		width     : 48px;
+		height    : 85px;
+
+		transform : translateX(-50%);
+
+		animation : arrowmove 1s ease-in-out infinite;
+
+		@media screen and (max-width: 767px) {
+			width  : 15px;
+			height : 45px;
+		}
+	}
+	  
+	.scroll_down a{
+		position        : absolute;
+		left            : -24px;
+		bottom          : 17px;
+
+		color           : #FFF;
+		font-size       : 14px;
+		font-family     : 'redaction-50', sans-serif;
+		letter-spacing  : .2em;
+
+		writing-mode    : vertical-rl;
+		text-decoration : none;
+		text-transform  : uppercase;
+
+		@media screen and (max-width: 767px) {
+			color     : #0000FF;
+			font-size : 14px;
+		}
+	}
+	  
+	.scroll_down:before {
+		content   : "";
+
+		position   : absolute;
+		bottom     : 5px;
+		right      : -6px;
+
+		width      : 2px;
+		height     : 20px;
+
+		background : #FFF;
+		transform  : skewX(-31deg);
+
+		@media screen and (max-width: 767px) {
+			background : #0000FF;
+		}
+	  }
+	  
+	.scroll_down:after{
+		content    : "";
+		
+		position   : absolute;
+		bottom     : 5px;
+		right      : 0;
+
+		width      : 2px;
+		height     : 85px;
+
+		background :#FFF;
+
+		@media screen and (max-width: 767px) {
+			background : #0000FF;
+			height     : 85px;
+		}
+	}
+	  
+	@keyframes arrowmove{
+		0%{ transform: translateX(-50%) translateY(0); }
+		50%{ transform: translateX(-50%) translateY(12px); }
+		100%{ transform: translateX(-50%) translateY(0); }
+	}
 }
 
 @keyframes blinking
@@ -375,6 +407,7 @@ select
 	{
 		opacity: 0;
 	}
+
 	100%
 	{
 		opacity: 1;
@@ -383,66 +416,56 @@ select
 
 .blink
 {
-	animation: blinking 0.75s ease-in-out infinite alternate;
+	animation : blinking 0.75s ease-in-out infinite alternate;
 }
 
 .fadeOut{
-	transition: opacity 0.75s;
-	opacity: 0 !important;
+	transition : opacity 0.75s;
+	opacity    : 0 !important;
 }
 
 .fadeIn{
-	transition: opacity 0.75s;
-	opacity: 1 !important;
+	transition : opacity 0.75s;
+	opacity    : 1 !important;
 }
 
 video
 {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center;
+	position        : absolute;
+	top             : 0;
+	left            : 0;
+
+	width           : 100%;
+	height          : 100%;
+
+	object-fit      : cover;
+	object-position : center;
 }
 
-
-
-
-#main
+#header
 {
-	.innerarea
-	{
-		margin-top: vw(1154, 1920);
-		@media screen and (max-width: 767px) {
-			margin-top: vw(1300, 390);
-		}
-	}
-
 	.youtubeIcon
 	{
-		position: fixed;
-		bottom: 50px;
-		right: 25px;
-		display: inline-block;
-		line-height: 0;
-		z-index: 1000;
+		position    : fixed;
+		bottom      : 50px;
+		right       : 25px;
+
+		display     : inline-block;
+		z-index     : 1000;
 
 		@media screen and (max-width: 767px) {
-			bottom: vw(24, 390);
-			right: vw(16, 390);
+			bottom : vw(24, 390);
+			right : vw(16, 390);
 		}
 
 		img
 		{
-			display: block;
-			height: vw(200, 1920);
-			width: auto;
-			max-width: none;
+			display   : block;
+			height    : vw(200, 1920);
+			width     : auto;
 
 			@media screen and (max-width: 767px) {
-				height: vw(100, 390);
+				height : vw(100, 390);
 			}
 		}
 	}
@@ -450,25 +473,29 @@ video
 
 	.datearea
 	{
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: vw(40, 1920);
-		z-index: 0;
-		background-color: #0000FF;
-		display: flex;
-		align-items: center;
-		overflow: hidden;
+		position         : fixed;
+		top              : 0;
+		left             : 0;
+
+		width            : 100%;
+		height           : vw(40, 1920);
+
+		z-index          : 0;
+		background-color : #0000FF;
+
+		display          : flex;
+		align-items      : center;
+		overflow         : hidden;
 
 		@media screen and (max-width: 767px) {
-			height: vw(32, 390);
+			height : vw(32, 390);
 		}
 
 		@keyframes infinity-scroll-left {
 			from {
 			  transform: translateX(0);
 			}
+
 			to {
 				transform: translateX(-100%);
 			}
@@ -476,225 +503,259 @@ video
 
 		.scroll-infinity
 		{
-			width: 100%;
-			height: 100%;
-			display: flex;
-			align-items: center;
-			overflow: hidden;
+			width       : 100%;
+			height      : 100%;
+			display     : flex;
+			align-items : center;
+			overflow    : hidden;
 		}
 
 		.scroll-infinity__wrap
 		{
-			display: flex;
-			overflow: hidden;
+			display  : flex;
+			overflow : hidden;
 		}
 
 		.scroll-infinity__list
 		{
-			display: flex;
-			align-items: center;
-			list-style: none;
-			padding: 0;
-			margin: 0;
+			display     : flex;
+			align-items : center;
+			list-style  : none;
+
+			padding     : 0;
+			margin      : 0;
 		}
 
 		.scroll-infinity__list--left
 		{
-			animation: infinity-scroll-left 80s infinite linear 0.5s both;
+			animation : infinity-scroll-left 80s infinite linear 0.5s both;
 
 			@media screen and (max-width: 767px) {
-				animation-duration: 50s;
+				animation-duration : 50s;
 			}
 		}
 
 		.scroll-infinity__item
 		{
-			width: calc(100vw / 10);
+			width : calc(100vw / 10);
 
 			@media screen and (max-width: 767px) {
-				width: calc(100vw / 10);
+				width : calc(100vw / 10);
 			}
 		}
 
 		.scroll-infinity__item>img
 		{
-			width: 100%;
+			width : 100%;
 		}
 
 		.scroll-infinity__item--text
 		{
-			display: flex;
-			align-items: center;
-			flex-shrink: 0;
-			font-size: vw(16, 1920);
-			font-family: "redaction-50", sans-serif;
-			width: calc(vw(1920, 1920) / 5);
-			height: 100%;
-			color: #FFF;
-			white-space: nowrap;
-			transform: skewX(-12deg);
+			display     : flex;
+			align-items : center;
+			flex-shrink : 0;
+
+			font-family : "redaction-50", sans-serif;
+			font-size   : vw(16, 1920);
+			color       : #FFF;
+
+			width       : calc(vw(1920, 1920) / 5);
+			height      : 100%;
+
+			white-space : nowrap;
+			transform   : skewX(-12deg);
 
 			@media screen and (max-width: 767px) {
-				font-size: vw(16, 390);
-				width: calc(vw(390, 390) / 1);
-				transform: skewX(-12deg);
+				font-size : vw(16, 390);
+
+				width     : calc(vw(390, 390) / 1);
+
+				transform : skewX(-12deg);
 			}
 		}
 	}
-	
+}
 
+
+#main
+{
+	.innerarea
+	{
+		margin-top : vw(1154, 1920);
+
+		@media screen and (max-width: 767px) {
+			margin-top : vw(1300, 390);
+		}
+	}
+	
 	.infoarea
 	{
-		margin-bottom: 100px;
+		margin-bottom : 100px;
+
 		@media screen and (max-width: 767px) {
-			margin-bottom: 200px;
+			margin-bottom : 200px;
 		}
 
 		.contents
 		{
-			margin-top: 20px;
-			margin-bottom: 20px;
+			margin-top    : 20px;
+			margin-bottom : 20px;
 
 			.text
 			{
-				margin-bottom: 10px;
+				margin-bottom : 10px;
 			}
 		}
 	}
 
 	.timetablearea
 	{
-		img
-		{
-			width: 100%;
-			height: auto;
+		margin-bottom : 100px;
+
+		@media screen and (max-width: 767px) {
+			margin-bottom : 200px;
 		}
 
-		margin-bottom: 100px;
-		@media screen and (max-width: 767px) {
-			margin-bottom: 200px;
+		img
+		{
+			width  : 100%;
+			height : auto;
 		}
 	}
 
 	.performersarea
 	{
-		margin-bottom: 200px;
+		margin-bottom : 200px;
 
 		.heading
 		{
-			margin-bottom: 30px;
+			margin-bottom : 30px;
 		}
 
 		.performers
 		{
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			row-gap: vw(90, 1920);
-			column-gap: vw(150, 1920);
+			display               : grid;
+			grid-template-columns : repeat(2, 1fr);
+			row-gap               : vw(90, 1920);
+			column-gap            : vw(150, 1920);
+
 			@media screen and (max-width: 767px) {
-				grid-template-columns: repeat(1, 1fr);
-				row-gap: vw(90, 390);
-				column-gap: vw(90, 390);
+				grid-template-columns : repeat(1, 1fr);
+				row-gap               : vw(90, 390);
+				column-gap            : vw(90, 390);
 			}
 
 			.content
 			{
-				width: vw(650, 1920);
+				width : vw(650, 1920);
+
 				@media screen and (max-width: 767px) {
-					width: 100%;
+					width : 100%;
 				}
 
 				.imagearea
 				{
-					width: 100%;
-					height: vw(270, 1920);
-					padding: 0 vw(120, 1920);
-					text-align: center;
-					justify-content: space-between;
+					width           : 100%;
+					height          : vw(270, 1920);
+
+					padding         : 0 vw(120, 1920);
+
+					text-align      : center;
+					justify-content : space-between;
 
 					@media screen and (max-width: 767px) {
-						padding: 0;
-						height: vw(190, 390);
+						padding : 0;
+
+						height   : vw(190, 390);
 					}
+					
 					&.onePieceImage
 					{
 						img
 						{
-							width: vw(270, 1920);
-							height: auto;
+							width  : vw(270, 1920);
+							height : auto;
+
 							@media screen and (max-width: 767px) {
-								width: vw(190, 390);
+								width : vw(190, 390);
 							}
 						}
 					}
+
 					&.twoPieceImage
 					{
-						display: flex;
-						justify-content: space-between;
+						display         : flex;
+						justify-content : space-between;
 
 						img
 						{
-							width: vw(202, 1920);
-							height: auto;
+							width  : vw(202, 1920);
+							height : auto;
+
 							@media screen and (max-width: 767px) {
-								width: vw(154, 390);
+								width : vw(154, 390);
 							}
 						}
+
 						.image1
 						{
-							align-self: flex-start;
+							align-self : flex-start;
 						}
 
 						.image2
 						{
-							align-self: flex-end;
+							align-self : flex-end;
 						}
 					}
 					&.threePieceImage
 					{
-						display: flex;
-						justify-content: space-between;
+						display         : flex;
+						justify-content : space-between;
 
 						img
 						{
-							width: vw(135, 1920);
-							height: auto;
+							width  : vw(135, 1920);
+							height : auto;
+
 							@media screen and (max-width: 767px) {
-								width: vw(102, 390);
+								width : vw(102, 390);
 							}
 						}
+
 						.image1
 						{
-							align-self: flex-start;
+							align-self : flex-start;
 						}
+
 						.image2
 						{
-							align-self: center;
+							align-self : center;
 						}
+
 						.image3
 						{
-							align-self: flex-end;
+							align-self : flex-end;
 						}
 					}
 				}
+
 				.title
 				{
-					margin-top: 20px;
-					margin-bottom: 10px;
-					font-family: "noto-sans", sans-serif;
+					margin-top    : 20px;
+					margin-bottom : 10px;
+					font-family   : "noto-sans", sans-serif;
 				}
-
-
-
 			}
 		}
 	}
+
 	#footer
 	{
 		@extend .fs_20;
-		text-align: center;
+		text-align : center;
+
 		@media screen and (max-width: 767px) {
-			font-size: 14px !important;
+			font-size : 14px !important;
 		}
 	}
 }

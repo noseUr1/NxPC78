@@ -18,8 +18,8 @@
 </head>
 
 <body>
-    <div id="main">
-		<?php
+	<div id="header">
+	<?php
 		date_default_timezone_set('Asia/Tokyo');
 		$now = time();
 		$displayStart = strtotime('2026-06-11 18:00:00');
@@ -78,7 +78,8 @@
 					</div>
 			</div>
 		</div>
-
+	</div>
+    <div id="main">
 		<div class="innerarea d-none">
 			<div class="infoarea">
 				<div class="heading">
