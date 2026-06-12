@@ -22,7 +22,7 @@
 	<?php
 		date_default_timezone_set('Asia/Tokyo');
 		$now = time();
-		$displayStart = strtotime('2026-06-11 18:00:00');
+		$displayStart = strtotime('2026-06-11 11:55:00');
 		$displayEnd = strtotime('2026-06-19 21:00:00');
 		$isPlay = ($now >= $displayStart && $now <= $displayEnd);
 		?>
