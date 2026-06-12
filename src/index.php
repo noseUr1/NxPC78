@@ -27,9 +27,9 @@
 		$isPlay = ($now >= $displayStart && $now <= $displayEnd);
 		?>
 		<?php if ($isPlay) : ?>
-			<div class="youtubeIcon">
+			<a href="https://www.youtube.com/" class="youtubeIcon">
 				<img src="./assets/images/youtube_logo.png">
-			</div>
+		</a>
 		<?php endif; ?>
 
 		<div class="datearea">
