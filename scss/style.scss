@@ -430,6 +430,7 @@ video
 		z-index: 1000;
 		@media screen and (max-width: 767px) {
 			height: vw(100, 390);
+			width: auto;
 		}
 		img
 		{
